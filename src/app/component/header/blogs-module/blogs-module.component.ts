@@ -25,7 +25,8 @@ export class BlogsModuleComponent implements OnInit{
   onChangeFileField(event:any)
   {
     this.file=event.target.files[0]
-    this.blog.id=this.num++;
+    this.num++
+    this.blog.id=this.num;
     this.blog.imgName=this.file.name;
     console.log(this.file);
   }
