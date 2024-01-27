@@ -1,0 +1,27 @@
+<div class="card" style="width: 60%; margin: auto;">
+    <img src="{{ Blogs.url }}" class="card-img-top" alt="...">
+    <div class="card-body" style="color: white;background-color: rgb(67, 63, 63);">
+      <p class="card-text"><strong>Author: </strong>{{ Blogs.author }}</p>
+      <p class="card-text"><strong>Title: </strong> {{ Blogs.title }}</p>
+      <p class="card-text"><strong>Content: </strong> {{ Blogs.content }}</p>
+      <p class="card-text"><strong>Description: </strong> {{ Blogs.description }}</p>
+      <p class="card-text"><strong>PublishedAt: </strong> {{ Blogs.publishedAt }}</p>
+      <input style="color:rgb(34, 29, 29);border-radius: 5px;background-color: rgb(255, 255, 255);" type="text" #box placeholder="please enter your views" (blur)="getComments(box.value)">
+      <button class="btn btn-primary" style="margin: 5px;"(click)="addComment(box.value)">Submit</button>
+      <p style="font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Comments -></p>
+      <br>
+    </div>
+    <ng-container *ngFor="let temp of comm">
+      <div style="color: white;background-color: rgb(67, 63, 63);" class="com">
+      <img style="width: 52px;" class="imgg" src="../assets/profile.jpeg">
+      <p class="usr">Unknown User {{i}}</p>
+      <br>
+      <p>-------------->{{temp}}</p>
+    </div>
+    <style>
+      .usr{
+        margin: 5px;
+      }
+    </style>
+    </ng-container>
+  </div>
